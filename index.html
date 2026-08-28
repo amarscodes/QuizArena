@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizArena - Interactive Quiz Application</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Login/Registration Container -->
+    <div class="auth-container">
+        <div class="auth-box">
+            <div class="auth-header">
+                <h1 class="logo">QuizArena</h1>
+                <p class="tagline">Test Your Knowledge, Dominate the Leaderboard</p>
+            </div>
+
+            <!-- Login Form -->
+            <div id="loginForm" class="auth-form active">
+                <h2>Welcome Back</h2>
+                <form onsubmit="handleLogin(event)">
+                    <div class="form-group">
+                        <label for="loginUsername">Username</label>
+                        <input type="text" id="loginUsername" placeholder="Enter your username" required>
+                        <span class="error-message" id="loginUsernameError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                        <span class="error-message" id="loginPasswordError"></span>
+                    </div>
+
+                    <div class="form-group remember-me">
+                        <input type="checkbox" id="rememberMe">
+                        <label for="rememberMe">Remember me</label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-full">Login</button>
+                </form>
+
+                <div class="auth-footer">
+                    <p>Don't have an account? <span class="toggle-form" onclick="toggleAuthForm()">Register Here</span></p>
+                </div>
+            </div>
+
+            <!-- Registration Form -->
+            <div id="registrationForm" class="auth-form">
+                <h2>Create Account</h2>
+                <form onsubmit="handleRegistration(event)">
+                    <div class="form-group">
+                        <label for="regUsername">Username</label>
+                        <input type="text" id="regUsername" placeholder="Choose a username" required>
+                        <span class="error-message" id="regUsernameError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="regEmail">Email</label>
+                        <input type="email" id="regEmail" placeholder="Enter your email" required>
+                        <span class="error-message" id="regEmailError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="regPassword">Password</label>
+                        <input type="password" id="regPassword" placeholder="Create a password (min 6 characters)" required>
+                        <span class="error-message" id="regPasswordError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="regConfirmPassword">Confirm Password</label>
+                        <input type="password" id="regConfirmPassword" placeholder="Confirm your password" required>
+                        <span class="error-message" id="regConfirmPasswordError"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-full">Create Account</button>
+                </form>
+
+                <div class="auth-footer">
+                    <p>Already have an account? <span class="toggle-form" onclick="toggleAuthForm()">Login Here</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+</body>
+</html>
